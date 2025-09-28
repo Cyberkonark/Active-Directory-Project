@@ -1,3 +1,4 @@
 # Active-Directory-Project
 
-<img width="577" height="655" alt="Active Directory" src="https://github.com/user-attachments/assets/9a0275a8-d280-49eb-b3a0-53c271683aab" />
+
+<img width="852" height="712" alt="Screenshot 2025-09-28 173729" src="https://github.com/user-attachments/assets/6e98545b-9761-452b-88b1-802bd7fa5fcf" />
