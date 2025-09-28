@@ -5,7 +5,7 @@ Estimated completion time: 3-4 hours
 <img width="575" height="655" alt="Active Directory" src="https://github.com/user-attachments/assets/a9445271-75b2-4bb9-bb2d-95f820110f3e" />
 Active Directory Lab Diagram
 
-#Objective
+# Objective
 
 The objective of the lab is to provide a hands-on learning experience in setting up a virtualized environment for cybersecurity testing and exploration. By creating and configuring multiple virtual machines (VMs) including Windows 10, Kali Linux, Windows Server, and Ubuntu Server, the lab aims to teach skills such as network configuration, security tool installation (Splunk, Sysmon), endpoint monitoring, and security testing (using Crowbar for brute force attacks). Joining Windows machines to an Active Directory domain and enabling Remote Desktop also adds to the learning objectives. PowerShell scripting is used for automation tasks. Overall, the lab enables participants to gain practical experience in cybersecurity concepts, tools, and techniques within a controlled environment.
 Skills Learned
@@ -55,7 +55,8 @@ Download Windows Server 2022 ISO from https://www.microsoft.com/en-us/evalcenter
 5. Install Ubuntu Server
 
 Navigate to https://ubuntu.com/server. In products, Ubuntu Server, download Ubuntu Server, download Ubuntu Server. This lab uses version 22.04.4 LTS. Create a new VM in Oracle VM VirtualBox Manager with the ISO, 8192MB RAM, 2 CPUs, 100GB virtual disk, and finish. Start the VM, select "Try or Install Ubuntu Server", continue through a series of "Done" and "Continue", then fill out the form before continuing the installation. Finally, reboot. Error messages are expected. After rebooting, login and run sudo apt-get update && sudo apt-get upgrade -y. After this completes, hit "Enter".
-Summary
+
+# Summary
 
 You should now have Oracle VM VirtualBox Manager installed with four VMs running Windows 10, Kali Linux, Windows Server, and Splunk Server.
 Part 2 - Configure the Network
