@@ -23,21 +23,20 @@ The objective of the lab is to provide a hands-on learning experience in setting
 - Enabling Remote Desktop on Windows.<br>
 - PowerShell scripting for tasks (Invoke-WebRequest, Set-ExecutionPolicy).<br>
 
-These skills covered topics relating to Virtualization, Networking, Software Installation and Configuration, Security Tools and Practices, Operating System Configuration, Documentation and Reporting, Scripting and Automation, Troubleshooting, Active Directory Management, as well as Endpoint Monitoring and Defense.
-Tools Used
-
-    Oracle VM VirtualBox Manager: For creating and managing virtual machines (VMs).
-    Splunk Server: For log analysis and monitoring.
-    Splunk Universal Forwarder: For data forwarding to Splunk.
-    Sysmon: Endpoint monitoring on Windows machines.
-    Crowbar: Used to simulate brute force attacks.
-    Atomic Red Team (ART): Used for security testing and validation.
-    PowerShell: For scripting and automation tasks.
-    Microsoft Windows Event Logs: Analyzed in Splunk for security monitoring.
-    Windows Server 2022: Operating system used for Active Directory Domain Services setup.
-    Ubuntu Server: Used as a Splunk server in the lab setup.
-    Microsoft Windows 10: Operating system for target machine in the lab.
-    Kali Linux: Used as an attacker machine in the lab setup.
+*These skills covered topics relating to Virtualization, Networking, Software Installation and Configuration, Security Tools and Practices, Operating System Configuration, Documentation and Reporting, Scripting and Automation, Troubleshooting, Active Directory Management, as well as Endpoint Monitoring and Defense.*<br>
+## Tools Used
+- Oracle VM VirtualBox Manager: For creating and managing virtual machines (VMs).<br>
+- Splunk Server: For log analysis and monitoring.<br>
+- Splunk Universal Forwarder: For data forwarding to Splunk.<br>
+- Sysmon: Endpoint monitoring on Windows machines.<br>
+- Crowbar: Used to simulate brute force attacks.<br>
+- Atomic Red Team (ART): Used for security testing and validation.<br>
+- PowerShell: For scripting and automation tasks.<br>
+- Microsoft Windows Event Logs: Analyzed in Splunk for security monitoring.<br>
+- Windows Server 2022: Operating system used for Active Directory Domain Services setup.<br>
+- Ubuntu Server: Used as a Splunk server in the lab setup.<br>
+- Microsoft Windows 10: Operating system for target machine in the lab.<br>
+- Kali Linux: Used as an attacker machine in the lab setup.<br>
 
 # Steps
 # Part 1 - VM Installation
