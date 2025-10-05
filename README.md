@@ -7,20 +7,21 @@ Active Directory Lab Diagram
 
 ### Objective
 
-The objective of the lab is to provide a hands-on learning experience in setting up a virtualized environment for cybersecurity testing and exploration. By creating and configuring multiple virtual machines (VMs) including Windows 10, Kali Linux, Windows Server, and Ubuntu Server, the lab aims to teach skills such as network configuration, security tool installation (Splunk, Sysmon), endpoint monitoring, and security testing (using Crowbar for brute force attacks). Joining Windows machines to an Active Directory domain and enabling Remote Desktop also adds to the learning objectives. PowerShell scripting is used for automation tasks. Overall, the lab enables participants to gain practical experience in cybersecurity concepts, tools, and techniques within a controlled environment.
-Skills Learned
+The objective of the lab is to provide a hands-on learning experience in setting up a virtualized environment for cybersecurity testing and exploration. By creating and configuring multiple virtual machines (VMs) including Windows 10, Kali Linux, Windows Server, and Ubuntu Server, the lab aims to teach skills such as network configuration, security tool installation (Splunk, Sysmon), endpoint monitoring, and security testing (using Crowbar for brute force attacks). Joining Windows machines to an Active Directory domain and enabling Remote Desktop also adds to the learning objectives. PowerShell scripting is used for automation tasks. Overall, the lab enables participants to gain practical experience in cybersecurity concepts, tools, and techniques within a controlled environment. <br>
 
-    Setting up VMs (Windows 10, Kali Linux, Windows Server, Ubuntu Server) in Oracle VM VirtualBox.
-    Configuring IP addresses, NAT Networks for VMs.
-    Troubleshooting network connectivity (ping, DNS settings).
-    Installing Splunk Server and Universal Forwarder.
-    Installing Sysmon for endpoint monitoring.
-    Using Crowbar for brute force attacks.
-    Using Atomic Red Team (ART) to simulate tests.
-    Analyzing security logs (event codes 4625, 4624) in Splunk.
-    Joining Windows machines to a domain.
-    Enabling Remote Desktop on Windows.
-    PowerShell scripting for tasks (Invoke-WebRequest, Set-ExecutionPolicy).
+### Skills Learned
+
+- Setting up VMs (Windows 10, Kali Linux, Windows Server, Ubuntu Server) in Oracle VM VirtualBox.<br>
+- Configuring IP addresses, NAT Networks for VMs.<br>
+- Troubleshooting network connectivity (ping, DNS settings).<br>
+- Installing Splunk Server and Universal Forwarder.<br>
+- Installing Sysmon for endpoint monitoring.<br>
+- Using Crowbar for brute force attacks.<br>
+- Using Atomic Red Team (ART) to simulate tests. <br>
+- Analyzing security logs (event codes 4625, 4624) in Splunk.<br>
+- Joining Windows machines to a domain.<br>
+- Enabling Remote Desktop on Windows.<br>
+- PowerShell scripting for tasks (Invoke-WebRequest, Set-ExecutionPolicy).<br>
 
 These skills covered topics relating to Virtualization, Networking, Software Installation and Configuration, Security Tools and Practices, Operating System Configuration, Documentation and Reporting, Scripting and Automation, Troubleshooting, Active Directory Management, as well as Endpoint Monitoring and Defense.
 Tools Used
