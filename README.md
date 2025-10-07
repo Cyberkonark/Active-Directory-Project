@@ -1,7 +1,8 @@
 # Active Directory Project
-### This project sets up a virtual environment using Oracle VM VirtualBox with Windows 10, Kali Linux, Windows Server, and Ubuntu Server VMs. Network configurations enable communication via IP addresses and NAT Networks. Security includes Splunk Server for log analysis, Universal Forwarder for data forwarding, and Sysmon for endpoint monitoring. Testing involves Crowbar for brute force attacks, Atomic Red Team (ART) for general tests, and Splunk log analysis. Windows machines join an Active Directory domain with Remote Desktop enabled. PowerShell scripting automates tasks for a hands-on exploration of cybersecurity concepts and tools in a controlled environment.<br>
+### This project sets up a virtual environment using Oracle VM VirtualBox with Windows 10, Kali Linux, Windows Server, and Ubuntu Server VMs. Network configurations enable communication via IP addresses and NAT Networks. Security includes Splunk Server for log analysis, Universal Forwarder for data forwarding, and Sysmon for endpoint monitoring. Testing involves Crowbar for brute force attacks and Splunk log analysis. Windows machines join an Active Directory domain with Remote Desktop enabled. PowerShell scripting automates tasks for a hands-on exploration of cybersecurity concepts and tools in a controlled environment.<br>
 *Estimated completion time: 3-4 hours* <br><br>
-![Active Directory Lab Diagram](ActiveDirectoryLab.jpg) <br>
+<img width="575" height="655" alt="Active Directory 2" src="https://github.com/user-attachments/assets/613916c8-925e-40e8-9f9c-4c3358cd58ca" />
+<br>
 *Ref 1. Active Directory Lab Diagram*
 ## Objective
 The objective of the lab is to provide a hands-on learning experience in setting up a virtualized environment for cybersecurity testing and exploration. By creating and configuring multiple virtual machines (VMs) including Windows 10, Kali Linux, Windows Server, and Ubuntu Server, the lab aims to teach skills such as network configuration, security tool installation (Splunk, Sysmon), endpoint monitoring, and security testing (using Crowbar for brute force attacks). Joining Windows machines to an Active Directory domain and enabling Remote Desktop also adds to the learning objectives. PowerShell scripting is used for automation tasks. Overall, the lab enables participants to gain practical experience in cybersecurity concepts, tools, and techniques within a controlled environment. <br>
@@ -13,7 +14,6 @@ The objective of the lab is to provide a hands-on learning experience in setting
 - Installing Splunk Server and Universal Forwarder.<br>
 - Installing Sysmon for endpoint monitoring.<br>
 - Using Crowbar for brute force attacks.<br>
-- Using Atomic Red Team (ART) to simulate tests. <br>
 - Analyzing security logs (event codes 4625, 4624) in Splunk.<br>
 - Joining Windows machines to a domain.<br>
 - Enabling Remote Desktop on Windows.<br>
@@ -26,7 +26,6 @@ The objective of the lab is to provide a hands-on learning experience in setting
 - Splunk Universal Forwarder: For data forwarding to Splunk.<br>
 - Sysmon: Endpoint monitoring on Windows machines.<br>
 - Crowbar: Used to simulate brute force attacks.<br>
-- Atomic Red Team (ART): Used for security testing and validation.<br>
 - PowerShell: For scripting and automation tasks.<br>
 - Microsoft Windows Event Logs: Analyzed in Splunk for security monitoring.<br>
 - Windows Server 2022: Operating system used for Active Directory Domain Services setup.<br>
@@ -137,8 +136,7 @@ On our target machine, search "This PC" > Properties > Advanced System Settings 
 Navigate back to the Linux machine. `crowbar -h` to get more information about the Crowbar tool. Run `crowbar -b rdp -u tsmith -C passwords.txt -s 192.168.10.100/32`. If a password listed in `passwords.txt` matches a password assigned to the user-specified, you will get a success message with the password attributed to the specified user.
 ### *5. Analyze Attack Using Splunk*
 We can view all activity of this endpoint using `index=endpoint`, and if we know something happened to Terry's account we can also add `tsmith`. We will notice when we scroll down and select `EventCode` there are 3 events, and one stands out. Value `4625` stands out because it occurred 20 times. A quick Google search (https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4625) verifies that this is 60 counts of an account failing to log on. When investigating further, it can be noted that all of the counts are occurring at approximately the same time which is an indication of brute force activity. We also notice an event code `4624` which when is looked into (https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-10/security/threat-protection/auditing/event-4624) we know is an indication of a successful logon. We can expand this event by clicking "Show all x lines", and we can then see the soruce of this logon.
-### *6. Run Tests on the Target Machine using Atomic Red Team (ART)*
-Open Powershell as administrator. Run `Set-ExecutionPolicy Bypass CurrentUser` > `Y`. Click the up arrow located at the bottom right of your window. Windows Security > Virus & threat protection > Manage Settings > Add or Remove Exclusions > Add an exclusion > Folder > This PC > Local Disk (C:). Now navigate back to PowerShell and run `IEX ( IWR 'https://raw.githubusercontent.com/redcanaryco/invoke-atomicredteam/master/install-atomicredteam.ps1' -UseBasicParsing);` followed by `Install-AtomicRedTeam -getAtomics` and `Y`.<br><br>Now navigate to the (C:) drive > AtomicRedTeam > Atomics. We can also navigate to https://attack.mitre.org/ in order to view adversary attacks and techniques, as well as use it as a key for the "T" values. Run `Invoke-AtomicTest T1136.001` to T1136 is a persistence, create local account test. After running this test and checking Splunk, we can see that no events popped up with the `NewLocalUser` that was created. This is excellent because we have just identified a gap in our protection. We can continue this with as many tests as we please. This makes Atomic Red Team very valuable for an organization.
+
 ### *Summary*
 You have reached the end of the walk-through! With the conclusion of the last part of this step-by-step walk-through, you should have a successful setup and communication between 4 Virtual Machines: Windows 10 Target Machine, Kali Linux Attacker Machine, Splunk, and Windows Servers. You should be able to view events with Splunk, test Splunk functionality and defense using Crowbar brute force password cracker, and more. <br><br>
-### Very special thank you to MyDFIR on YouTube for the tutorial. I learned a lot during this process and was able to apply my theoretical knowledge and gain invaluable practical experience. Check his channel out for more tutorials here: https://www.youtube.com/@MyDFIR
+
