@@ -52,7 +52,8 @@ You should now have Oracle VM VirtualBox Manager installed with four VMs running
 ### *1. Setup Communications*
 Navigate to Tools > Network > NAT Networks > Create. Provide a name and IPv4 Prefix (in this lab, we will use 192.168.10.0/24), then apply. Navigate to each VM > Settings > Network, change "Attached to: *NAT Network*" and assign the name to the NAT Network you just created. Run the Splunk VM and type `sudo nano /etc/netplan/00-installer-config.yaml`. You should modify and save to look like this: <br>
 ````
-network: 
+network:
+  version: 2
   ethernet:
     enp0s3:
       dhcp4: no
@@ -62,7 +63,7 @@ network:
       routes:
           - to: default
             via: 192.168.10.1
-  version: 2
+  
 ````
 Then run `sudo netplan apply` to make changes. Now run `ip a`, you should see the IP address set to `192.168.10.10/24`. Verify connecting by running `ping google.com`.
 ### *2. Install Splunk*
